@@ -17,7 +17,6 @@ export class LoginComponent {
     }
     http=inject(HttpClient);
     router=inject(Router)
-    //constructor(private http:HttpClient){}
     onLogin(){
 
       debugger;
