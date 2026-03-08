@@ -1,11 +1,11 @@
 import { Component, inject, OnInit} from '@angular/core';
 import { MasterService } from '../services/master.service';
 import { IApiResponse, IchildDept, IparentDept } from '../Model/Employee';
-import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-employee',
-  imports: [FormsModule,CommonModule,ReactiveFormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.css'
 })
@@ -14,6 +14,14 @@ export class EmployeeComponent implements OnInit{
   parentDeptList:IparentDept[]=[]
   childDeptList:IchildDept[]=[]
   deptId:number=0;
+  name: string = '';
+  contactNo: string = '';
+  emailId: string = '';
+  childDeptId: number = 0;
+  gender: string = '';
+  role: string = '';
+  password: string = '';
+  createdDate: string = '';
 masterService= inject(MasterService);
 ngOnInit(): void {
   this.getParentDeptList();
